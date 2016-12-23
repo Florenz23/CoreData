@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
 
     let moContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
 
         
     func saveData(){

@@ -14,7 +14,11 @@ class StoreListTVCTableViewController: UITableViewController {
     
     let moContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    var stores = [Store]()
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +27,13 @@ class StoreListTVCTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var error:NSError
+        let request = NSFetchRequest(entityName: "Store")
+        stores = moContext?.executeFetchRequest(request: NSFetchRequest, error: NSErrorPointer)
+        
     }
 
     override func didReceiveMemoryWarning() {
