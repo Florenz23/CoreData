@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F6CCB6D1E0D7AAE00F45BF9 /* StoreListTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CCB6C1E0D7AAE00F45BF9 /* StoreListTVCTableViewController.swift */; };
 		C04376E51E0C1606002018CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04376E41E0C1606002018CF /* AppDelegate.swift */; };
 		C04376E71E0C1606002018CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04376E61E0C1606002018CF /* ViewController.swift */; };
 		C04376EA1E0C1606002018CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04376E81E0C1606002018CF /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F6CCB6C1E0D7AAE00F45BF9 /* StoreListTVCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListTVCTableViewController.swift; sourceTree = "<group>"; };
 		C04376E11E0C1605002018CF /* CoreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04376E41E0C1606002018CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04376E61E0C1606002018CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				C04376F01E0C1606002018CF /* LaunchScreen.storyboard */,
 				C04376F31E0C1606002018CF /* Info.plist */,
 				C04376EB1E0C1606002018CF /* CoreData.xcdatamodeld */,
+				0F6CCB6C1E0D7AAE00F45BF9 /* StoreListTVCTableViewController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C04376E71E0C1606002018CF /* ViewController.swift in Sources */,
+				0F6CCB6D1E0D7AAE00F45BF9 /* StoreListTVCTableViewController.swift in Sources */,
 				C04376E51E0C1606002018CF /* AppDelegate.swift in Sources */,
 				C04376ED1E0C1606002018CF /* CoreData.xcdatamodeld in Sources */,
 			);
@@ -518,6 +522,7 @@
 				C043770E1E0C1606002018CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C043770F1E0C1606002018CF /* Build configuration list for PBXNativeTarget "CoreDataExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +531,7 @@
 				C04377111E0C1606002018CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C04377121E0C1606002018CF /* Build configuration list for PBXNativeTarget "CoreDataExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +540,7 @@
 				C04377141E0C1606002018CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

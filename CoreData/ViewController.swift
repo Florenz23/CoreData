@@ -17,23 +17,40 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtLong: UITextField!
     @IBOutlet weak var txtLang: UITextField!
     
+    @IBAction func saveBtn(_ sender: UIButton) {
+        saveData()
+    }
+    
+
     let moContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
         
     func saveData(){
         
         // Get Description
-        //let storeDescription = NSEntityDescription.entityForName("Store", inManagedObjectContext: moContext!)
+        let storeDescription = NSEntityDescription.entity(forEntityName: "Store", in: moContext)
 
         //let store = Store(entity: storeDescription!, insertIntoManagedObjectContext: moContext)
         let newContact = NSEntityDescription.insertNewObject(forEntityName: "Store", into: moContext)
         
-        newContact.setValue(txtName.text, forKey: "sName")
-        newContact.setValue(txtDesc.text, forKey: "sDesc")
-        newContact.setValue(txtImg.text, forKey: "sImg")
-        newContact.setValue(txtLong.text, forKey: "sLang")
-        newContact.setValue(txtLang.text, forKey: "sLat")
-                
+        let store = Store(entity: storeDescription!, insertInto: moContext)
+        
+        store.sName = txtName.text
+        store.sDesc = txtDesc.text
+        store.sLat = txtLang.text
+        store.sLang = txtLang.text
+        
+        //newContact.setValue(txtName.text, forKey: "sName")
+        //newContact.setValue(txtImg.text, forKey: "sLang")
+        //newContact.setValue(txtLong.text, forKey: "sLat")
+        //newContact.setValue(txtLang.text, forKey: "sDesc")
+        
+        let img = UIImage(named: "lama.jpeg")
+        let imgData = UIImageJPEGRepresentation(img!,1)
+        
+        store.sImage = imgData
+        
+        
         do {
             try moContext.save()
             print("saved")
@@ -48,6 +65,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
