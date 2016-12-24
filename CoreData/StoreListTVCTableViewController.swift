@@ -31,109 +31,29 @@ class StoreListTVCTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //var error1 : NSError
+        
+        getData()
+        
+    }
+    
+    func getData() {
+        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Store")
-        //stores = moContext.execute(<#T##request: NSPersistentStoreRequest##NSPersistentStoreRequest#>)
         request.returnsObjectsAsFaults = false
-
         
         
         do
         {
             let results = try moContext.fetch(request)
             stores = results as! [Store]
-            print("ok")
-            print(stores.count)
             self.tableView.reloadData()
-
-            
-                    }
+        }
         catch {
             print ("error")
         }
-
         
     }
     
-    func saveData(){
-        
-        // Get Description
-        let storeDescription = NSEntityDescription.entity(forEntityName: "Store", in: moContext)
-        
-        //let store = Store(entity: storeDescription!, insertIntoManagedObjectContext: moContext)
-        //let newContact = NSEntityDescription.insertNewObject(forEntityName: "Store", into: moContext)
-        
-        let store = Store(entity: storeDescription!, insertInto: moContext)
-        
-        store.sName = "moin1"
-        store.sDesc = "moin11"
-        
-        //newContact.setValue(txtName.text, forKey: "sName")
-        //newContact.setValue(txtImg.text, forKey: "sLang")
-        //newContact.setValue(txtLong.text, forKey: "sLat")
-        //newContact.setValue(txtLang.text, forKey: "sDesc")
-        
-        //let img = UIImage(named: "lama.jpeg")
-        //let imgData = UIImageJPEGRepresentation(img!,1)
-        
-        //store.sImage = imgData
-        
-        
-        do {
-            try moContext.save()
-            print("saved")
-        }
-        catch {
-            print("nein")
-        }
-        
-    }
-
-    func getData() {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserData")
-        let firstName = true
-        request.predicate = NSPredicate(format: "owner == %@", firstName as CVarArg)
-        
-        request.returnsObjectsAsFaults = false
-        
-        do
-        {
-            let results = try context.fetch(request)
-            
-            if results.count > 0
-            {
-                for result in results as! [NSManagedObject]
-                {
-                    if let name = result.value(forKey: "name") as? String {
-                        //textFieldName.text = name
-                        print (name)
-                    }
-                    if let name = result.value(forKey: "phone") as? String {
-                        //textFieldPhone.text = name
-                        print (name)
-                    }
-                    if let name = result.value(forKey: "owner") as? Bool {
-                        print (name)
-                    }
-                }
-            }
-        }
-        catch {
-            print ("error")
-        }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

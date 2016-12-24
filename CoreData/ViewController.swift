@@ -30,21 +30,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let s = store {
-            
-            txtName.text = s.sName
-            txtDesc.text = s.sDesc
-            
-        }
+        checkIfDataExistAndWriteItnoTextfield()
         
         saveData()
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func checkIfDataExistAndWriteItnoTextfield() {
+        
+        if let s = store {
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            txtName.text = s.sName
+            txtDesc.text = s.sDesc
+        }
+
     }
     
     func saveData(){
@@ -61,23 +60,10 @@ class ViewController: UIViewController {
             
         }
         
-        
-            store?.sName = txtName.text
-            store?.sDesc = txtDesc.text
-            store?.sLat = txtLang.text
-            store?.sLang = txtLang.text
-            
-        
-        
-        //newContact.setValue(txtName.text, forKey: "sName")
-        //newContact.setValue(txtImg.text, forKey: "sLang")
-        //newContact.setValue(txtLong.text, forKey: "sLat")
-        //newContact.setValue(txtLang.text, forKey: "sDesc")
-        
-        //let img = UIImage(named: "lama.jpeg")
-        //let imgData = UIImageJPEGRepresentation(img!,1)
-        
-        //store.sImage = imgData
+        store?.sName = txtName.text
+        store?.sDesc = txtDesc.text
+        store?.sLat = txtLang.text
+        store?.sLang = txtLang.text
         
         
         do {
